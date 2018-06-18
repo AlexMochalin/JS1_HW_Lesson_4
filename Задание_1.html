@@ -1,0 +1,26 @@
+<script>
+	var obj = {};
+	
+	var userNumber = prompt('Введите число от 0 до 999');
+	
+	function getObject(userNumber) {
+	
+		var ranks = userNumber.split("");
+
+		if (ranks.length == 1) {
+			ranks.unshift(0);
+			ranks.unshift(0);
+		}
+		else if (ranks.length == 2){
+			ranks.unshift(0);
+		}
+		
+		obj.hundreds = ranks[0];
+		obj.tens = ranks[1];
+		obj.units = ranks[2];
+		
+		return obj;
+	}
+	console.log(getObject(userNumber));
+	
+</script>
