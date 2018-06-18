@@ -1,119 +1,43 @@
 var event, ok;
+var totalGain = 0;
 
-do {//Выводим первый вопрос
-    ok = false;
-    event = +prompt(game[0].question + game[0].answer1 + game[0].answer2 + '-1 - Выход из игры');
-    if (event == -1) {
-        break;
-    }
-    else {
-        ok = isAnswer(game[0].amountQuestions, event);
-    }
-} while (!ok);
-switch (event) {
-    case 1: // Первое действие  - если в первом окне ввели 1 то открываем серию окон - окно 2
-        do {
-            ok = false;
-            event = +prompt(game[1].question + game[1].answer1 + game[1].answer2 + '-1 - Выход из игры');
-            if (event == -1) {
-                break;
-            }
-            else {
-                ok = isAnswer(game[1].amountQuestions, event);
-            }
-        } while (!ok);
-        switch (event) {
-            case 1: // Второе действие, если во 2 окне ввели 1 то переходим на 4 окно
-                do {
-                    ok = false;
-                    event = +prompt(game[3].question + game[3].answer1 + game[3].answer2 + '-1 - Выход из игры');
-                    if (event == -1) {
-                        break;
-                    }
-                    else {
-                        ok = isAnswer(game[3].amountQuestions, event);
-                    }
-                } while (!ok);
+for (var i = 0; i < game.length; i++) {
+	do {//Выводим первый вопрос
+		ok = false;
+		event = +prompt(game[i].question + '\n' + 'Выберите правильный ответ и укажите его номер' + '\n' + game[i].answer1 + game[i].answer2 + game[i].answer3 + game[i].answer4 + '-1 - Выход из игры');
+		if (event == -1) {
+			break;
+		}
+		else {
+			ok = isAnswer(game[i].amountOfAnswers, event);
+		}
+} 	while (!ok);
 
-                break;
-            case 2: // Второе действие   Если ввели 2 то также переходим на 4 окно
-                do {
-                    ok = false;
-                    event = +prompt(game[3].question + game[3].answer1 + game[3].answer2 + '-1 - Выход из игры');
-                    if (event == -1) {
-                        break;
-                    }
-                    else {
-                        ok = isAnswer(game[3].amountQuestions, event);
-                    }
-                } while (!ok);
-
-                break;
-            case -1: // Второе действие
-                break;
-            default:
-                alert('Ошибка');
-        }
-        break;
-    case 2: // Первое действие    Если в 1 окне ввели 2 то переходим к 3 окну
-        do {
-            ok = false;
-            event = +prompt(game[2].question + game[2].answer1 + game[2].answer2 + '-1 - Выход из игры');
-            if (event == -1) {
-                break;
-            }
-            else {
-                ok = isAnswer(game[2].amountQuestions, event);
-            }
-        } while (!ok);
-        switch (event) {
-            case 1: // Второе действие
-                do {
-                    ok = false;
-                    event = +prompt(game[3].question + game[3].answer1 + game[3].answer2 + '-1 - Выход из игры');
-                    if (event == -1) {
-                        break;
-                    }
-                    else {
-                        ok = isAnswer(game[3].amountQuestions, event);
-                    }
-                } while (!ok);
-
-                break;
-            case 2: // Второе действие
-                do {
-                    ok = false;
-                    event = +prompt(game[3].question + game[3].answer1 + game[3].answer2 + '-1 - Выход из игры');
-                    if (event == -1) {
-                        break;
-                    }
-                    else {
-                        ok = isAnswer(game[3].amountQuestions, event);
-                    }
-                } while (!ok);
-
-                break;
-            case -1: // Второе действие
-                break;
-            default:
-                alert('Ошибка');
-        }
-        break;
-    case -1: // Первое действие
-        break;
-    default:
-        alert('Ошибка');
+	if(event == game[i].correctAnswer) {
+		totalGain += game[i].gain;
+		alert('Вы угадали и ваш выигрыш составляет ' + totalGain + ' рублей!');
+	}
+	else {
+		alert('Вы не угадали, начните заново!');
+		totalGain = 0;
+		break;
+		
+	}
+	
 }
-alert('Спасибо за игру');
+
+if (totalGain != 0) {
+	alert('Вы очень умный, спасибо за игру!');	
+} 
 
 //------------------------------------------
 function isAnswer(q, event) {
     if (isNaN(event) || !isFinite(event)) {
-        alert('Вы ввели недопустимый символ');
+        alert('Вы ввели недопустимый ответ');
         return false;
     }
     else if (event < 1 || event > q) {
-        alert('Ваше число выходит из допустимого диапозона');
+        alert('Вы ввели недопустимый ответ');
         return false;
     }
     return true;
