@@ -4,7 +4,7 @@ var totalGain = 0;
 for (var i = 0; i < game.length; i++) {
 	do {//Выводим первый вопрос
 		ok = false;
-		event = +prompt('Вопрос №' + i +'. ' + game[i].question + '\n' + 'Выберите правильный ответ и укажите его номер' + '\n' + game[i].answer1 + game[i].answer2 + game[i].answer3 + game[i].answer4 + '-1 - Выход из игры');
+		event = +prompt('Вопрос №' + (i + 1) +'. ' + game[i].question + '\n' + 'Выберите правильный ответ и укажите его номер' + '\n' + game[i].answer1 + game[i].answer2 + game[i].answer3 + game[i].answer4 + '-1 - Выход из игры');
 		if (event == -1) {
 			break;
 		}
@@ -32,19 +32,24 @@ if (totalGain != 0) {
 var numberQuestion = +prompt('Введите номер вопроса, который хотите посмотреть или -1 для выхода');
 switch (numberQuestion){
 	case 1:
-		alert('game[0].question');
+		var a = game[0].question;
+		alert(a);
 		break;
 	case 2:
-		alert('game[1].question');
+		var a = game[1].question;
+		alert(a);
 		break;
 	case 3:
-		alert('game[2].question');
+		var a = game[2].question;
+		alert(a);
 		break;
 	case 4:
-		alert('game[3].question');
+		var a = game[3].question;
+		alert(a);
 		break;
 	case 5:
-		alert('game[4].question');
+		var a = game[4].question;
+		alert(a);
 		break;
 	case -1:
 		break;
