@@ -1,12 +1,11 @@
 <script>
-	var obj = {};
+	var object = {};
 	
 	var userNumber = prompt('Введите число от 0 до 999');
 	
-	function getObject(userNumber) {
+	function getObject(obj,userNumber) {
 	
 		var ranks = userNumber.split("");
-
 		if (ranks.length == 1) {
 			ranks.unshift(0);
 			ranks.unshift(0);
@@ -21,6 +20,7 @@
 		
 		return obj;
 	}
-	console.log(getObject(userNumber));
+
+	console.log(getObject(object,userNumber));
 	
 </script>
