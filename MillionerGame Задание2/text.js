@@ -1,0 +1,47 @@
+var game = [
+				{question:'Зимой и летом одним цветом, что это?',
+				 amountOfAnswers:4,
+				 answer1:'1 - Яблоня\n',
+				 answer2:'2 - Ёлка\n',
+				 answer3:'3 - Почтальон Печкин\n',
+				 answer4:'4 - Чебурашка\n',
+				 correctAnswer:2,
+				 gain:10000
+				},
+				{question:'Сто одежек и все без застежек. Что это?',
+				 amountOfAnswers:4,
+				 answer1:'1 - Кот Матроскин\n',
+				 answer2:'2 - Морковка\n',
+				 answer3:'3 - Капуста\n',
+				 answer4:'4 - Крокодил Гена\n',
+				 correctAnswer:3,
+				 gain:20000
+				},
+				{question:'Без окон, без дверей, полна горница людей.',
+				 amountOfAnswers:4,
+				 answer1:'1 - Груша\n',
+				 answer2:'2 - Микки Маус\n',
+				 answer3:'3 - Шапокляк\n',
+				 answer4:'4 - Арбуз\n',
+				 correctAnswer:4,
+				 gain:30000
+				},
+				{question:'У него огромный рот - он зовется ...',
+				 amountOfAnswers:4,
+				 answer1:'1 - Крокодил\n',
+				 answer2:'2 - Слон\n',
+				 answer3:'3 - Бегемот\n',
+				 answer4:'4 - Ежик\n',
+				 correctAnswer:3,
+				 gain:40000
+				},
+				{question:'Сама пестрая, есть зеленое, дает белое. Кто это?',
+				 amountOfAnswers:4,
+				 answer1:'1 - Мельница\n',
+				 answer2:'2 - Корова\n',
+				 answer3:'3 - Курица\n',
+				 answer4:'4 - Баба Яга\n',
+				 correctAnswer:2,
+				 gain:40000
+				}
+			]
