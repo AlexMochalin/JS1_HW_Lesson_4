@@ -7,20 +7,20 @@
 	
 		var ranks = userNumber.split("");
 		if (ranks.length == 1) {
-			ranks.unshift(0);
-			ranks.unshift(0);
+			obj.units = ranks[0];
 		}
 		else if (ranks.length == 2){
-			ranks.unshift(0);
+			obj.tens = ranks[0];
+			obj.units = ranks[1];
 		}
-		
+		else {
 		obj.hundreds = ranks[0];
 		obj.tens = ranks[1];
 		obj.units = ranks[2];
+		}
 		
 		return obj;
 	}
-
 	console.log(getObject(object,userNumber));
 	
 </script>
